@@ -47,3 +47,6 @@ gem 'bcrypt-ruby'
 # gem 'debugger', group: [:development, :test]
 
 gem 'minitest'
+
+gem 'countries'
+gem 'countries_select'

@@ -14,6 +14,8 @@
 			<th>Username</th>
 			<th>Name</th>
 			<th>Email</th>
+			<th>Country</th>
+			<th>Capital</th>
 			<th>Actions</th>
 		</tr>
 		<% @admin_users.each do |admin_user| %>
@@ -21,6 +23,8 @@
 			<td><%= admin_user.username %></td>
 			<td><%= admin_user.name %></td>
 			<td><%= mail_to(admin_user.email) %></td>
+			<td><%= admin_user.country %></td>
+			<td><%= admin_user.capital %></td>
 			<td class="actions">
 				<%= link_to('Edit', {:action => 'edit', :id => admin_user.id}, :class => 'action edit') %>
 				<%= link_to('Delete', {:action => 'delete', :id => admin_user.id}, :class => 'action delete') %>

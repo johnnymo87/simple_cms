@@ -33,7 +33,9 @@ class AdminUser < ActiveRecord::Base
 										:length => {:maximum => 100},
 										:format => EMAIL_REDEX,
 										:confirmation => true
+  validates :country, :presence => true
 	validate :username_is_allowed
+  before_save :set_capital, :if => :country_changed?
 
 	scope :sorted, lambda {order("last_name ASC, first_name ASC")}
 
@@ -48,5 +50,8 @@ class AdminUser < ActiveRecord::Base
 			errors.add(:username, "has been restricted from use.")
 		end
 	end
-	
+
+  def set_capital
+    self.capital = CapitalFinder.for country
+  end
 end
