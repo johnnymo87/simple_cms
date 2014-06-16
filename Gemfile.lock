@@ -114,6 +114,7 @@ GEM
       json (>= 1.8.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -122,6 +123,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  minitest
   pg
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)

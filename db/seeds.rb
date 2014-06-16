@@ -12,3 +12,5 @@ AdminUser.create!(first_name: 'Pat',
 									email: 'p@p.com',
 									username: 'patmurphy',
 									password: 'secret', password_confirmation: 'secret')
+
+WorldbankAPI.all_countries

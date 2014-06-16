@@ -8,6 +8,8 @@ class AdminUser < ActiveRecord::Base
 	has_and_belongs_to_many :pages
 	has_many :section_edits
 	has_many :sections, :through => :section_edits
+  belongs_to :country
+  validates_presence_of :country
 
 	 EMAIL_REDEX = /\A[a-z0-9._%+-]+@[a-z0=9.-]+\.[a-z]{2,4}\Z/i
 	 FORBIDDEN_USERNAMES =['littlebopeep', 'humptydumpth', 'marymary']

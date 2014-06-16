@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228210332) do
+ActiveRecord::Schema.define(version: 20140616072423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20140228210332) do
     t.datetime "updated_at"
     t.string   "username",        limit: 25
     t.string   "password_digest"
+    t.string   "country"
+    t.string   "capital"
   end
 
   add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
@@ -34,6 +36,13 @@ ActiveRecord::Schema.define(version: 20140228210332) do
   end
 
   add_index "admin_users_pages", ["admin_user_id", "page_id"], name: "index_admin_users_pages_on_admin_user_id_and_page_id", using: :btree
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.string   "capital"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", force: true do |t|
     t.integer  "subject_id"
